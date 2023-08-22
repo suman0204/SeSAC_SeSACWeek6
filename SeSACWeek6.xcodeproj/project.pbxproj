@@ -15,6 +15,7 @@
 		8BF852F22A930A0C00F57338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF852F02A930A0C00F57338 /* LaunchScreen.storyboard */; };
 		8BF8530C2A94461C00F57338 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF8530B2A94461C00F57338 /* SnapKit */; };
 		8BF8530F2A94467D00F57338 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8530E2A94467D00F57338 /* SnapViewController.swift */; };
+		8BF853112A945CC500F57338 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853102A945CC500F57338 /* TextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8BF852F12A930A0C00F57338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BF852F32A930A0C00F57338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BF8530E2A94467D00F57338 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
+		8BF853102A945CC500F57338 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				8BF8530E2A94467D00F57338 /* SnapViewController.swift */,
+				8BF853102A945CC500F57338 /* TextViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF853112A945CC500F57338 /* TextViewController.swift in Sources */,
 				8BF8530F2A94467D00F57338 /* SnapViewController.swift in Sources */,
 				8BF852EA2A930A0B00F57338 /* ViewController.swift in Sources */,
 				8BF852E62A930A0B00F57338 /* AppDelegate.swift in Sources */,

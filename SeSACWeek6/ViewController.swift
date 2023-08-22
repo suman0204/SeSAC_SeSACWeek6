@@ -73,7 +73,7 @@ class ViewController: UIViewController {
 
 
     @objc func signButtonClicked() {
-        let vc = SnapViewController()
+        let vc = TextViewController()
         present(vc, animated: true)
         
     }
