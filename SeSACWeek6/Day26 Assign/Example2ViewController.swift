@@ -37,7 +37,7 @@ class Example2ViewController: UIViewController {
         view.tintColor = .white
         view.setImage(UIImage(systemName: "qrcode"), for: .normal)
         view.backgroundColor = .blue
-
+       
         return view
     }()
 
@@ -85,12 +85,60 @@ class Example2ViewController: UIViewController {
         return view
     }()
     
+    let dividerView = {
+        let view = UIView()
+        
+        view.backgroundColor = .white
+        
+        return view
+    }()
+    
+    //MARK: 하단 버튼
+    let selfChatButton = {
+        let view = UIButton()
+        
+        view.setTitle("나와의 채팅", for: .normal)
+        view.setImage(UIImage(systemName: "bubble.left.fill"), for: .normal)
+        view.titleLabel?.font = .systemFont(ofSize: 13)
+        view.tintColor = .white
+        view.backgroundColor = .blue
+        view.alignTextBelow(spacing: 10)
+        
+        return view
+    }()
+    
+    let editProfileButton = {
+        let view = UIButton()
+        
+        view.setTitle("프로필 편집", for: .normal)
+        view.setImage(UIImage(systemName: "pencil"), for: .normal)
+        view.titleLabel?.font = .systemFont(ofSize: 13)
+        view.tintColor = .white
+        view.backgroundColor = .blue
+        view.alignTextBelow(spacing: 10)
+        
+        return view
+    }()
+    
+    let kakaoStoryButton = {
+        let view = UIButton()
+        
+        view.setTitle("카카오스토리", for: .normal)
+        view.setImage(UIImage(systemName: "leaf.fill"), for: .normal)
+        view.titleLabel?.font = .systemFont(ofSize: 13)
+        view.tintColor = .white
+        view.backgroundColor = .blue
+        view.alignTextBelow(spacing: 10)
+        
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .gray
         
-        [closeButton, giftButton, payButton, settingButton, profileImageView, nameLabel, stateMessageLabel].forEach {
+        [closeButton, giftButton, payButton, settingButton, profileImageView, nameLabel, stateMessageLabel, dividerView, selfChatButton, editProfileButton, kakaoStoryButton].forEach {
             view.addSubview($0)
         }
         
@@ -129,7 +177,7 @@ class Example2ViewController: UIViewController {
         //MARK: 프로필 이미지, 이름, 상태메시지 레이아웃
         profileImageView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(UIScreen.main.bounds.height * 0.58)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(UIScreen.main.bounds.height * 0.53)
             make.size.equalTo(100)
         }
         
@@ -146,7 +194,58 @@ class Example2ViewController: UIViewController {
             make.height.equalTo(20)
             make.width.equalTo(200)
         }
+        
+        dividerView.snp.makeConstraints { make in
+            make.top.equalTo(stateMessageLabel.snp.bottom).offset(25)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(1)
+        }
+        
+        selfChatButton.snp.makeConstraints { make in
+            make.centerY.equalTo(editProfileButton)
+            make.trailing.equalTo(editProfileButton.snp.leading).offset(-30)
+            make.size.equalTo(80)
+        }
+        
+        editProfileButton.snp.makeConstraints { make in
+            make.centerX.equalTo(profileImageView)
+            make.top.equalTo(dividerView.snp.bottom).offset(15)
+            make.size.equalTo(80)
+        }
+
+        kakaoStoryButton.snp.makeConstraints { make in
+            make.centerY.equalTo(editProfileButton)
+            make.leading.equalTo(editProfileButton.snp.trailing).offset(30)
+            make.size.equalTo(80)
+        }
+        
     }
 
 
+}
+
+// UIButton image, title Vertical Alignment
+extension UIButton {
+    
+    func alignTextBelow(spacing: CGFloat = 4.0) {
+            guard let image = self.imageView?.image else {
+                return
+            }
+
+            guard let titleLabel = self.titleLabel else {
+                return
+            }
+
+            guard let titleText = titleLabel.text else {
+                return
+            }
+
+            let titleSize = titleText.size(withAttributes: [
+                NSAttributedString.Key.font: titleLabel.font as Any
+            ])
+
+            titleEdgeInsets = UIEdgeInsets(top: spacing, left: -image.size.width, bottom: -image.size.height, right: 0)
+            imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + spacing), left: 0, bottom: 0, right: -titleSize.width)
+        }
+    
 }
