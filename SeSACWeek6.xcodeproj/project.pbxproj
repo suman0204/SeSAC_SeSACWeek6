@@ -16,6 +16,7 @@
 		8BF8530C2A94461C00F57338 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF8530B2A94461C00F57338 /* SnapKit */; };
 		8BF8530F2A94467D00F57338 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8530E2A94467D00F57338 /* SnapViewController.swift */; };
 		8BF853112A945CC500F57338 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853102A945CC500F57338 /* TextViewController.swift */; };
+		8BF853132A94792C00F57338 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853122A94792C00F57338 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		8BF852F32A930A0C00F57338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BF8530E2A94467D00F57338 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		8BF853102A945CC500F57338 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		8BF853122A94792C00F57338 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				8BF852EE2A930A0C00F57338 /* Assets.xcassets */,
 				8BF852F02A930A0C00F57338 /* LaunchScreen.storyboard */,
 				8BF852F32A930A0C00F57338 /* Info.plist */,
+				8BF853122A94792C00F57338 /* LocationViewController.swift */,
 			);
 			path = SeSACWeek6;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				8BF853112A945CC500F57338 /* TextViewController.swift in Sources */,
 				8BF8530F2A94467D00F57338 /* SnapViewController.swift in Sources */,
 				8BF852EA2A930A0B00F57338 /* ViewController.swift in Sources */,
+				8BF853132A94792C00F57338 /* LocationViewController.swift in Sources */,
 				8BF852E62A930A0B00F57338 /* AppDelegate.swift in Sources */,
 				8BF852E82A930A0B00F57338 /* SceneDelegate.swift in Sources */,
 			);
