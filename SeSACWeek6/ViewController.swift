@@ -73,7 +73,7 @@ class ViewController: UIViewController {
 
 
     @objc func signButtonClicked() {
-        let vc = Example1ViewController()
+        let vc = Example2ViewController()
         present(vc, animated: true)
         
     }
