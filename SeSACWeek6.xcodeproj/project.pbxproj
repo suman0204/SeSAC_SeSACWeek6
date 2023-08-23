@@ -19,6 +19,7 @@
 		8BF853132A94792C00F57338 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853122A94792C00F57338 /* LocationViewController.swift */; };
 		8BF853162A94A08500F57338 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853152A94A08500F57338 /* Example1ViewController.swift */; };
 		8BF853182A94ACFE00F57338 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853172A94ACFE00F57338 /* Example2ViewController.swift */; };
+		8BF8531A2A94F36600F57338 /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853192A94F36600F57338 /* Example3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		8BF853122A94792C00F57338 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		8BF853152A94A08500F57338 /* Example1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		8BF853172A94ACFE00F57338 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
+		8BF853192A94F36600F57338 /* Example3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				8BF853152A94A08500F57338 /* Example1ViewController.swift */,
 				8BF853172A94ACFE00F57338 /* Example2ViewController.swift */,
+				8BF853192A94F36600F57338 /* Example3ViewController.swift */,
 			);
 			path = "Day26 Assign";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF853112A945CC500F57338 /* TextViewController.swift in Sources */,
+				8BF8531A2A94F36600F57338 /* Example3ViewController.swift in Sources */,
 				8BF8530F2A94467D00F57338 /* SnapViewController.swift in Sources */,
 				8BF852EA2A930A0B00F57338 /* ViewController.swift in Sources */,
 				8BF853132A94792C00F57338 /* LocationViewController.swift in Sources */,
@@ -333,6 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACWeek6/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨에 대한 정보를 가지고 오기 위해 위치 정보가 필요해요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -360,6 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACWeek6/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨에 대한 정보를 가지고 오기 위해 위치 정보가 필요해요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

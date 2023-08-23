@@ -7,15 +7,24 @@
 
 import UIKit
 import CoreLocation //1. 위치 import
+import MapKit
+import SnapKit
 
 class LocationViewController: UIViewController {
 
     //2. 위치 매니저 생성: 위치에 대한 대부분을 담당
     let locationManager = CLLocationManager()
     
+    let mapview = MKMapView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.addSubview(mapview)
+        mapview.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(50)
+        }
+        
         view.backgroundColor = .white
         
         //3. 위치 프로토콜 연결
@@ -28,6 +37,13 @@ class LocationViewController: UIViewController {
         checkDeviceLocationAuthorization()
     }
     
+    func setRegionAndAnnotation() {
+        
+        //지도 중심 기반으로 보여질 범위 설정
+        let region = MKCoordinateRegion(center: <#T##CLLocationCoordinate2D#>, latitudinalMeters: <#T##CLLocationDistance#>, longitudinalMeters: <#T##CLLocationDistance#>)
+    }
+    
+    //iOS 기기 자체에서의 위치 서비스 활성화 체크
     func checkDeviceLocationAuthorization() {
         
         //iOS 위치 서비스 활성화 체크
@@ -55,11 +71,11 @@ class LocationViewController: UIViewController {
         
     }
     
+    // 사용자의 현재 위치를 체크
     func checkCurrentLocationAuthorization(status: CLAuthorizationStatus) {
         print("check", status)
         switch status {
-        //최소로 사용자가 앱을 켰을 때
-        case .notDetermined:
+        case .notDetermined://최소로 사용자가 앱을 켰을 때
             locationManager.desiredAccuracy = kCLLocationAccuracyBest //위치 기준 잡아주는 (각 기종에 알맞게 설정됨)
             locationManager.requestWhenInUseAuthorization() // 위치 서비스 설정 팝업 띄워주는 코드
             
@@ -69,11 +85,14 @@ class LocationViewController: UIViewController {
             print("denied")
         case .authorizedAlways:
             print("authorizedAlways")
-        case .authorizedWhenInUse:
+        case .authorizedWhenInUse: //권한이 허용됐을 때
             print("authorizedWhenInUse")
+            //didUpdateLocations 실행함
             locationManager.startUpdatingLocation() // 권한이 허용됐을 때 사용자의 위치를 업데이트 해줘라
         case .authorized:
             print("authorized")
+        @unknown default: //위치 권한 종류가 더 생길 가능성 대비
+            print("default")
         }
     }
     
@@ -84,8 +103,16 @@ class LocationViewController: UIViewController {
 extension LocationViewController: CLLocationManagerDelegate {
  
     //5. 사용자의 위치를 성공적으로 가지고 온 경우
+    //한 번만 실행되지 않는다, iOS 위치 기기가 자체적으로 판단해서 위치 업데이트가 필요한 시점에 알아서 여러번 호출 된다
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("===", locations)
+//        print("===", locations)
+        
+        if let coordinate = locations.last?.coordinate {
+            print(coordinate)
+        }
+        
+        //위치 업데이트를 한 번만 하고 싶을 때 사용
+        locationManager.stopUpdatingLocation()
     }
     
     //6. 사용자의 위치를 가지고 오지 못한 경우
