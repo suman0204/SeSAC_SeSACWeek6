@@ -20,6 +20,10 @@
 		8BF853162A94A08500F57338 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853152A94A08500F57338 /* Example1ViewController.swift */; };
 		8BF853182A94ACFE00F57338 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853172A94ACFE00F57338 /* Example2ViewController.swift */; };
 		8BF8531A2A94F36600F57338 /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853192A94F36600F57338 /* Example3ViewController.swift */; };
+		8BF8531D2A95F56600F57338 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8531C2A95F56600F57338 /* Theater.swift */; };
+		8BF8531F2A95F58000F57338 /* TheaterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8531E2A95F58000F57338 /* TheaterType.swift */; };
+		8BF853212A9600E100F57338 /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853202A9600E100F57338 /* TheaterViewController.swift */; };
+		8BF853232A964AFA00F57338 /* ActionSheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853222A964AFA00F57338 /* ActionSheetType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		8BF853152A94A08500F57338 /* Example1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		8BF853172A94ACFE00F57338 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
 		8BF853192A94F36600F57338 /* Example3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
+		8BF8531C2A95F56600F57338 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
+		8BF8531E2A95F58000F57338 /* TheaterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterType.swift; sourceTree = "<group>"; };
+		8BF853202A9600E100F57338 /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
+		8BF853222A964AFA00F57338 /* ActionSheetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 		8BF852E42A930A0B00F57338 /* SeSACWeek6 */ = {
 			isa = PBXGroup;
 			children = (
+				8BF8531B2A95F50F00F57338 /* Day27 Assign Theater */,
 				8BF853142A94A06500F57338 /* Day26 Assign */,
 				8BF8530D2A94464B00F57338 /* Test */,
 				8BF852E52A930A0B00F57338 /* AppDelegate.swift */,
@@ -101,6 +110,17 @@
 				8BF853192A94F36600F57338 /* Example3ViewController.swift */,
 			);
 			path = "Day26 Assign";
+			sourceTree = "<group>";
+		};
+		8BF8531B2A95F50F00F57338 /* Day27 Assign Theater */ = {
+			isa = PBXGroup;
+			children = (
+				8BF8531C2A95F56600F57338 /* Theater.swift */,
+				8BF8531E2A95F58000F57338 /* TheaterType.swift */,
+				8BF853222A964AFA00F57338 /* ActionSheetType.swift */,
+				8BF853202A9600E100F57338 /* TheaterViewController.swift */,
+			);
+			path = "Day27 Assign Theater";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,9 +206,13 @@
 				8BF852EA2A930A0B00F57338 /* ViewController.swift in Sources */,
 				8BF853132A94792C00F57338 /* LocationViewController.swift in Sources */,
 				8BF853182A94ACFE00F57338 /* Example2ViewController.swift in Sources */,
+				8BF853212A9600E100F57338 /* TheaterViewController.swift in Sources */,
 				8BF853162A94A08500F57338 /* Example1ViewController.swift in Sources */,
 				8BF852E62A930A0B00F57338 /* AppDelegate.swift in Sources */,
+				8BF8531F2A95F58000F57338 /* TheaterType.swift in Sources */,
 				8BF852E82A930A0B00F57338 /* SceneDelegate.swift in Sources */,
+				8BF8531D2A95F56600F57338 /* Theater.swift in Sources */,
+				8BF853232A964AFA00F57338 /* ActionSheetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 //StoryBoard 방식
 //1. 객체 얹고, 레이아웃 잡고, 아웃렛 연결, 속성 조절
@@ -28,6 +29,15 @@ class ViewController: UIViewController {
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
     let signButton = UIButton()
+    let theaterButton = {
+        let view = UIButton()
+        
+        view.setTitle("영화관", for: .normal)
+        view.tintColor = .white
+        view.backgroundColor = .black
+        
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +79,7 @@ class ViewController: UIViewController {
         passwordTextField.backgroundColor = .brown
         
         setLayoutAnchor()
+        setLayoutSnp()
     }
 
 
@@ -94,8 +105,30 @@ class ViewController: UIViewController {
             signButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
+        
+        
     }
     
+    @objc func theaterButtonClicked() {
+        let vc = TheaterViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        
+//        self.navigationController?.pushViewController(vc, animated: true)
+        present(nav, animated:true)
+    }
+    
+    func setLayoutSnp() {
+        view.addSubview(theaterButton)
+        
+        theaterButton.addTarget(self, action: #selector(theaterButtonClicked), for: .touchUpInside)
+        
+        theaterButton.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(signButton.snp.top).offset(-20)
+            make.height.equalTo(50)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(30)
+        }
+    }
     
 }
 
