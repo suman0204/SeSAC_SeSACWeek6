@@ -16,6 +16,8 @@ class LocationViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     let mapview = MKMapView()
+    let cafeButton = UIButton()
+    let foodButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,23 @@ class LocationViewController: UIViewController {
         view.addSubview(mapview)
         mapview.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(50)
+        }
+        
+        view.addSubview(cafeButton)
+        cafeButton.addTarget(self, action: #selector(cafeButtonClicked), for: .touchUpInside)
+        cafeButton.backgroundColor = .red
+        cafeButton.snp.makeConstraints { make in
+            make.top.equalTo(view).offset(120)
+            make.size.equalTo(50)
+            make.leading.equalTo(view).offset(100)
+        }
+        
+        view.addSubview(foodButton)
+        foodButton.backgroundColor = .blue
+        foodButton.snp.makeConstraints { make in
+            make.top.equalTo(view).offset(120)
+            make.size.equalTo(50)
+            make.trailing.equalTo(view).offset(-100)
         }
         
         view.backgroundColor = .white
@@ -37,6 +56,35 @@ class LocationViewController: UIViewController {
         checkDeviceLocationAuthorization()
         let center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
         setRegionAndAnnotation(center: center)
+        setAnnotation(type: 0)
+    }
+    
+    @objc func cafeButtonClicked() {
+        setAnnotation(type: 1) // 카페: 1 , default: 0
+        print("==")
+    }
+    
+    func setAnnotation(type: Int) {
+//        37.517857, 126.886714 // 컴포즈
+//        37.517746, 126.887131//오밥
+        
+        
+        let annotaion1 = MKPointAnnotation()
+        annotaion1.coordinate = CLLocationCoordinate2D(latitude: 37.517857, longitude: 126.886714)
+        
+        let annotaion2 = MKPointAnnotation()
+        annotaion2.coordinate = CLLocationCoordinate2D(latitude: 37.517746, longitude: 126.887131)
+        
+        
+        if type == 0 { //viewDidLoad에서
+            mapview.addAnnotations([annotaion1,annotaion2])
+        } else if type == 1 { //cafebutton 눌렀을 때
+            
+            
+            mapview.removeAnnotations(mapview.annotations)
+            mapview.addAnnotations([annotaion2])
+        }
+        
     }
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D) {
