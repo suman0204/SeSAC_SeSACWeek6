@@ -35,12 +35,42 @@ class LocationViewController: UIViewController {
 //        locationManager.requestWhenInUseAuthorization()
         
         checkDeviceLocationAuthorization()
+        let center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
+        setRegionAndAnnotation(center: center)
     }
     
-    func setRegionAndAnnotation() {
+    func setRegionAndAnnotation(center: CLLocationCoordinate2D) {
         
         //지도 중심 기반으로 보여질 범위 설정
-        let region = MKCoordinateRegion(center: <#T##CLLocationCoordinate2D#>, latitudinalMeters: <#T##CLLocationDistance#>, longitudinalMeters: <#T##CLLocationDistance#>)
+//        let center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
+        let region = MKCoordinateRegion(center:  center, latitudinalMeters: 400, longitudinalMeters: 400)
+        mapview.setRegion(region, animated: true)
+        
+        //지도에 어노테이션 추가
+        let annotation = MKPointAnnotation()
+        annotation.title = "청년취업사관학교"
+        annotation.coordinate = center
+        mapview.addAnnotation(annotation)
+        
+    }
+    
+    func showLocationSettingAlert() {
+        let alert = UIAlertController(title: "위치 정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정 > 개인정보 보호'에서 위치 서비스를 켜주세요", preferredStyle: .alert)
+        let goSetting = UIAlertAction(title: "설정으로 이동", style: .default) { _ in
+            
+            // 설정에서 직접적으로 앱 설정 화면에 들어간적이 없다면, 한 번도 설정 앱에 들어가지 않았거나, 막 다운 받은 앱이라면 설정에 메인 화면까지만 이동함
+            // 설정 페이지로 넘어갈지, 앱의 상세 설정 페이지까지 넘아갈지 결정할 수 없다
+            if let appSetting = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(appSetting)
+            }
+            
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(goSetting)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
     }
     
     //iOS 기기 자체에서의 위치 서비스 활성화 체크
@@ -48,7 +78,6 @@ class LocationViewController: UIViewController {
         
         //iOS 위치 서비스 활성화 체크
         DispatchQueue.global().async {
-            
             if CLLocationManager.locationServicesEnabled() { //위치 서비스 켰는지 확인
                 
                 //현재 사용자의 위치 권한 상태를 가지고 옴
@@ -61,12 +90,14 @@ class LocationViewController: UIViewController {
                 }
                 
                 print(authorization)
-                self.checkCurrentLocationAuthorization(status: authorization)
+                
+                DispatchQueue.main.async {
+                    self.checkCurrentLocationAuthorization(status: authorization)
+                }
                 
             } else {
                 print("위치 서비스가 꺼져 있어서 위치 권한 요청을 못합니다.")
             }
-            
         }
         
     }
@@ -83,6 +114,7 @@ class LocationViewController: UIViewController {
             print("restricted")
         case .denied:
             print("denied")
+            showLocationSettingAlert()
         case .authorizedAlways:
             print("authorizedAlways")
         case .authorizedWhenInUse: //권한이 허용됐을 때
@@ -109,6 +141,8 @@ extension LocationViewController: CLLocationManagerDelegate {
         
         if let coordinate = locations.last?.coordinate {
             print(coordinate)
+            setRegionAndAnnotation(center: coordinate)
+            //ex.날씨 API 호출
         }
         
         //위치 업데이트를 한 번만 하고 싶을 때 사용
@@ -135,4 +169,20 @@ extension LocationViewController: CLLocationManagerDelegate {
         
     }
     
+}
+
+
+extension LocationViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        print(#function)
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+        print(#function)
+    }
+    
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        print(#function)
+//    }
 }
