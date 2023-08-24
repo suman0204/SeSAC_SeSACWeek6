@@ -19,6 +19,9 @@ class LocationViewController: UIViewController {
     let cafeButton = UIButton()
     let foodButton = UIButton()
     
+    //
+    let num = Int.random(in: 1...100)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,6 +63,9 @@ class LocationViewController: UIViewController {
     }
     
     @objc func cafeButtonClicked() {
+        let num2 = Int.random(in: 1...100) //scope
+        print(num, num2)
+        
         setAnnotation(type: 1) // 카페: 1 , default: 0
         print("==")
     }
@@ -80,6 +86,8 @@ class LocationViewController: UIViewController {
             mapview.addAnnotations([annotaion1,annotaion2])
         } else if type == 1 { //cafebutton 눌렀을 때
             
+            //아래 코드가 동작하지 않는 이유 - scope
+            mapview.removeAnnotation(annotaion1) // X
             
             mapview.removeAnnotations(mapview.annotations)
             mapview.addAnnotations([annotaion2])
