@@ -23,6 +23,21 @@
             </objects>
             <point key="canvasLocation" x="45" y="-27"/>
         </scene>
+        <!--Generic View Controller-->
+        <scene sceneID="mJb-7b-dPy">
+            <objects>
+                <viewController storyboardIdentifier="GenericViewController" id="Z88-rK-Qoz" customClass="GenericViewController" customModule="SeSACWeek6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bc4-0p-NDo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Swb-Y0-6V5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aia-eF-VdH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021" y="-27"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

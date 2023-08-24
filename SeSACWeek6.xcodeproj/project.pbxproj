@@ -24,6 +24,8 @@
 		8BF8531F2A95F58000F57338 /* TheaterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8531E2A95F58000F57338 /* TheaterType.swift */; };
 		8BF853212A9600E100F57338 /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853202A9600E100F57338 /* TheaterViewController.swift */; };
 		8BF853232A964AFA00F57338 /* ActionSheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853222A964AFA00F57338 /* ActionSheetType.swift */; };
+		8BF853262A96F11700F57338 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853252A96F11700F57338 /* GenericViewController.swift */; };
+		8BF853282A96F12E00F57338 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853272A96F12E00F57338 /* Extension+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		8BF8531E2A95F58000F57338 /* TheaterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterType.swift; sourceTree = "<group>"; };
 		8BF853202A9600E100F57338 /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 		8BF853222A964AFA00F57338 /* ActionSheetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetType.swift; sourceTree = "<group>"; };
+		8BF853252A96F11700F57338 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		8BF853272A96F12E00F57338 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		8BF852E42A930A0B00F57338 /* SeSACWeek6 */ = {
 			isa = PBXGroup;
 			children = (
+				8BF853242A96F0DF00F57338 /* Generic */,
 				8BF8531B2A95F50F00F57338 /* Day27 Assign Theater */,
 				8BF853142A94A06500F57338 /* Day26 Assign */,
 				8BF8530D2A94464B00F57338 /* Test */,
@@ -121,6 +126,15 @@
 				8BF853202A9600E100F57338 /* TheaterViewController.swift */,
 			);
 			path = "Day27 Assign Theater";
+			sourceTree = "<group>";
+		};
+		8BF853242A96F0DF00F57338 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				8BF853252A96F11700F57338 /* GenericViewController.swift */,
+				8BF853272A96F12E00F57338 /* Extension+UIViewController.swift */,
+			);
+			path = Generic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +218,11 @@
 				8BF8531A2A94F36600F57338 /* Example3ViewController.swift in Sources */,
 				8BF8530F2A94467D00F57338 /* SnapViewController.swift in Sources */,
 				8BF852EA2A930A0B00F57338 /* ViewController.swift in Sources */,
+				8BF853262A96F11700F57338 /* GenericViewController.swift in Sources */,
 				8BF853132A94792C00F57338 /* LocationViewController.swift in Sources */,
 				8BF853182A94ACFE00F57338 /* Example2ViewController.swift in Sources */,
 				8BF853212A9600E100F57338 /* TheaterViewController.swift in Sources */,
+				8BF853282A96F12E00F57338 /* Extension+UIViewController.swift in Sources */,
 				8BF853162A94A08500F57338 /* Example1ViewController.swift in Sources */,
 				8BF852E62A930A0B00F57338 /* AppDelegate.swift in Sources */,
 				8BF8531F2A95F58000F57338 /* TheaterType.swift in Sources */,
