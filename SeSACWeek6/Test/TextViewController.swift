@@ -59,14 +59,16 @@ class TextViewController: UIViewController {
         super.viewDidAppear(animated)
         
         //2. available
-        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
             print("갤러리 사용 불가, 사용자에게 토스트/얼럿")
             return
         }
-        
+
         picker.delegate = self
-        picker.sourceType = .photoLibrary
+        picker.sourceType = .camera
+        picker.allowsEditing = true
         
+//        let picker = UIColorPickerViewController()//UIFontPickerViewController()
         present(picker, animated: true)
     }
     
