@@ -10,6 +10,9 @@ import SnapKit
 
 class TextViewController: UIViewController {
     
+    //1. 이미지피커 등록
+    let picker = UIImagePickerController()
+    
      let photoImageView = {
         let view = UIImageView()
         
@@ -52,6 +55,21 @@ class TextViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //2. available
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            print("갤러리 사용 불가, 사용자에게 토스트/얼럿")
+            return
+        }
+        
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        
+        present(picker, animated: true)
+    }
+    
     func setupConstraints() {
 
         photoImageView.snp.makeConstraints { make in
@@ -69,4 +87,23 @@ class TextViewController: UIViewController {
     
     }
     
+}
+
+//사진 말고 앨범으로 전환해서 사용하면 앨범 내에서 폴더로 이동하고 뒤로 이동하는 일이 발생하므로 네비게이션 델리게이트와 함께 사용
+extension TextViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    //취소 버튼 클릭시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        print(#function)
+    }
+    
+    //사진을 선택하거나 카메라 촬영 직후 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.photoImageView.image = image
+            dismiss(animated: true)
+        }
+    }
 }
