@@ -30,6 +30,11 @@
 		8BF8532F2A972A1300F57338 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8532E2A972A1300F57338 /* CustomTableViewController.swift */; };
 		8BF853322A974F8600F57338 /* NetflixSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853312A974F8600F57338 /* NetflixSignUpViewController.swift */; };
 		8BF853342A97517900F57338 /* GrayBackgroundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853332A97517900F57338 /* GrayBackgroundTextField.swift */; };
+		8BF853362A97932700F57338 /* NetflixMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853352A97932700F57338 /* NetflixMainViewController.swift */; };
+		8BF8533A2A97971000F57338 /* TopWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853392A97971000F57338 /* TopWhiteButton.swift */; };
+		8BF8533C2A982B2F00F57338 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8533B2A982B2F00F57338 /* CustomTableViewCell.swift */; };
+		8BF8533E2A9840AC00F57338 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8533D2A9840AC00F57338 /* PosterImageView.swift */; };
+		8BF853412A984B7100F57338 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853402A984B7100F57338 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +62,11 @@
 		8BF8532E2A972A1300F57338 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		8BF853312A974F8600F57338 /* NetflixSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixSignUpViewController.swift; sourceTree = "<group>"; };
 		8BF853332A97517900F57338 /* GrayBackgroundTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBackgroundTextField.swift; sourceTree = "<group>"; };
+		8BF853352A97932700F57338 /* NetflixMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMainViewController.swift; sourceTree = "<group>"; };
+		8BF853392A97971000F57338 /* TopWhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopWhiteButton.swift; sourceTree = "<group>"; };
+		8BF8533B2A982B2F00F57338 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		8BF8533D2A9840AC00F57338 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
+		8BF853402A984B7100F57338 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				8BF853302A974F5400F57338 /* Day28 Assign Netflix */,
+				8BF8533F2A984B2900F57338 /* Onboarding */,
 				8BF853292A971CBF00F57338 /* CustomView */,
 				8BF853242A96F0DF00F57338 /* Generic */,
 				8BF8531B2A95F50F00F57338 /* Day27 Assign Theater */,
@@ -152,6 +163,8 @@
 				8BF8532A2A971CEE00F57338 /* CustomViewController.swift */,
 				8BF8532C2A971E9200F57338 /* BlackRadiusTextField.swift */,
 				8BF8532E2A972A1300F57338 /* CustomTableViewController.swift */,
+				8BF8533B2A982B2F00F57338 /* CustomTableViewCell.swift */,
+				8BF8533D2A9840AC00F57338 /* PosterImageView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -159,10 +172,36 @@
 		8BF853302A974F5400F57338 /* Day28 Assign Netflix */ = {
 			isa = PBXGroup;
 			children = (
+				8BF853382A9796F000F57338 /* MainView */,
+				8BF853372A9796CE00F57338 /* SignUpView */,
+			);
+			path = "Day28 Assign Netflix";
+			sourceTree = "<group>";
+		};
+		8BF853372A9796CE00F57338 /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
 				8BF853312A974F8600F57338 /* NetflixSignUpViewController.swift */,
 				8BF853332A97517900F57338 /* GrayBackgroundTextField.swift */,
 			);
-			path = "Day28 Assign Netflix";
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		8BF853382A9796F000F57338 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				8BF853352A97932700F57338 /* NetflixMainViewController.swift */,
+				8BF853392A97971000F57338 /* TopWhiteButton.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		8BF8533F2A984B2900F57338 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8BF853402A984B7100F57338 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,15 +287,20 @@
 				8BF8532D2A971E9200F57338 /* BlackRadiusTextField.swift in Sources */,
 				8BF8530F2A94467D00F57338 /* SnapViewController.swift in Sources */,
 				8BF852EA2A930A0B00F57338 /* ViewController.swift in Sources */,
+				8BF8533C2A982B2F00F57338 /* CustomTableViewCell.swift in Sources */,
 				8BF853262A96F11700F57338 /* GenericViewController.swift in Sources */,
 				8BF853132A94792C00F57338 /* LocationViewController.swift in Sources */,
+				8BF8533A2A97971000F57338 /* TopWhiteButton.swift in Sources */,
 				8BF853182A94ACFE00F57338 /* Example2ViewController.swift in Sources */,
+				8BF853412A984B7100F57338 /* OnboardingViewController.swift in Sources */,
 				8BF853212A9600E100F57338 /* TheaterViewController.swift in Sources */,
 				8BF853282A96F12E00F57338 /* Extension+UIViewController.swift in Sources */,
+				8BF853362A97932700F57338 /* NetflixMainViewController.swift in Sources */,
 				8BF853162A94A08500F57338 /* Example1ViewController.swift in Sources */,
 				8BF852E62A930A0B00F57338 /* AppDelegate.swift in Sources */,
 				8BF8531F2A95F58000F57338 /* TheaterType.swift in Sources */,
 				8BF852E82A930A0B00F57338 /* SceneDelegate.swift in Sources */,
+				8BF8533E2A9840AC00F57338 /* PosterImageView.swift in Sources */,
 				8BF8531D2A95F56600F57338 /* Theater.swift in Sources */,
 				8BF853232A964AFA00F57338 /* ActionSheetType.swift in Sources */,
 				8BF8532F2A972A1300F57338 /* CustomTableViewController.swift in Sources */,
