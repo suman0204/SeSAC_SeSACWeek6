@@ -35,6 +35,8 @@
 		8BF8533C2A982B2F00F57338 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8533B2A982B2F00F57338 /* CustomTableViewCell.swift */; };
 		8BF8533E2A9840AC00F57338 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8533D2A9840AC00F57338 /* PosterImageView.swift */; };
 		8BF853412A984B7100F57338 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853402A984B7100F57338 /* OnboardingViewController.swift */; };
+		8BF8534D2A9B55FE00F57338 /* BottomVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8534C2A9B55FE00F57338 /* BottomVerticalButton.swift */; };
+		8BF8534F2A9B71AA00F57338 /* GrayBorderCircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8534E2A9B71A900F57338 /* GrayBorderCircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		8BF8533B2A982B2F00F57338 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8BF8533D2A9840AC00F57338 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
 		8BF853402A984B7100F57338 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8BF8534C2A9B55FE00F57338 /* BottomVerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomVerticalButton.swift; sourceTree = "<group>"; };
+		8BF8534E2A9B71A900F57338 /* GrayBorderCircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBorderCircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,8 @@
 			children = (
 				8BF853352A97932700F57338 /* NetflixMainViewController.swift */,
 				8BF853392A97971000F57338 /* TopWhiteButton.swift */,
+				8BF8534C2A9B55FE00F57338 /* BottomVerticalButton.swift */,
+				8BF8534E2A9B71A900F57338 /* GrayBorderCircleImage.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -291,7 +297,9 @@
 				8BF853262A96F11700F57338 /* GenericViewController.swift in Sources */,
 				8BF853132A94792C00F57338 /* LocationViewController.swift in Sources */,
 				8BF8533A2A97971000F57338 /* TopWhiteButton.swift in Sources */,
+				8BF8534F2A9B71AA00F57338 /* GrayBorderCircleImage.swift in Sources */,
 				8BF853182A94ACFE00F57338 /* Example2ViewController.swift in Sources */,
+				8BF8534D2A9B55FE00F57338 /* BottomVerticalButton.swift in Sources */,
 				8BF853412A984B7100F57338 /* OnboardingViewController.swift in Sources */,
 				8BF853212A9600E100F57338 /* TheaterViewController.swift in Sources */,
 				8BF853282A96F12E00F57338 /* Extension+UIViewController.swift in Sources */,
