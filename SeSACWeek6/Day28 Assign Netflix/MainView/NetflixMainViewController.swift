@@ -91,6 +91,7 @@ class NetflixMainViewController: UIViewController {
     
     let previewThirdImage: UIView = {
         let view = GrayBorderCircleImage(frame: .zero)
+        view.image = UIImage(systemName: "person.circle")
         return view
     }()
     

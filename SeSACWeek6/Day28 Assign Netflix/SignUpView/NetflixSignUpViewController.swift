@@ -10,6 +10,8 @@ import SnapKit
 
 class NetflixSignUpViewController: UIViewController {
     
+    var viewModel = SignInViewModel()
+    
     let titleLabel: UILabel = {
         let view = UILabel()
         view.text = "JACKFLIX"
@@ -82,11 +84,40 @@ class NetflixSignUpViewController: UIViewController {
         
         setConstraints()
 
+        emailTextField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
+        viewModel.email.bind { email in
+            self.emailTextField.text = email
+        }
+        viewModel.emailValid.bind { bool in
+            self.emailTextField.backgroundColor = bool ? .green : .red
+        }
         
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
+        viewModel.password.bind { password in
+            self.passwordTextField.text = password
+        }
+        viewModel.passwordValid.bind { bool in
+            self.passwordTextField.backgroundColor = bool ? .green : .red
+        }
+        
+        viewModel.signUpValid.bind { bool in
+            self.signUpButton.isEnabled = bool
+            self.signUpButton.backgroundColor = bool ? .green : .white
+        }
         
     }
     
-
+    @objc func emailTextFieldChanged() {
+        viewModel.email.value = emailTextField.text
+        viewModel.checkEmailValidation()
+        viewModel.checkSignUpValidation()
+    }
+    
+    @objc func passwordTextFieldChanged() {
+        viewModel.password.value = passwordTextField.text
+        viewModel.checkPasswordValidation()
+        viewModel.checkSignUpValidation()
+    }
 
 }
 

@@ -65,7 +65,7 @@ class TextViewController: UIViewController {
         }
 
         picker.delegate = self
-        picker.sourceType = .camera
+        picker.sourceType = .photoLibrary
         picker.allowsEditing = true
         
 //        let picker = UIColorPickerViewController()//UIFontPickerViewController()
